@@ -1,348 +1,166 @@
 <!DOCTYPE html>
 <html lang="ms">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unit Bahagian Pengurusan Data SK Luasong</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/js/all.min.js"></script>
-    <style>
-        body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background-color: #eef2f3; color: #333; }
-        header { background: linear-gradient(135deg, #004080, #0088cc); color: white; padding: 20px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.2); position: relative; }
-        header img { position: absolute; top: 10px; height: 60px; }
-        .logo-left { left: 20px; }
-        .logo-right { right: 20px; }
-        nav { background: #005bb5; padding: 15px; text-align: center; }
-        nav a { color: white; text-decoration: none; padding: 12px 20px; margin: 5px; display: inline-block; background: #0073e6; border-radius: 5px; transition: 0.3s; font-weight: bold; cursor: pointer; }
-        nav a:hover { background: #004080; transform: scale(1.1); }
-        section { padding: 30px; background: white; margin: 15px auto; width: 80%; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: none; }
-        footer { text-align: center; padding: 15px; background: #004080; color: white; position: relative; margin-top: 20px; }
-        .title { text-align: center; color: #005bb5; font-size: 24px; font-weight: bold; }
- .widget-container {
-            display: flex;
-            justify-content: space-around;
-            padding: 10px;
-            background: #f1f1f1;
-            border-bottom: 2px solid #007bff;
-        }
-        .widget {
-            padding: 15px;
-            background: #ffffff;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s ease;
-        }
-        .widget:hover {
-            transform: scale(1.05);
-        }
-        .link-container a {
-            display: block;
-            padding: 10px;
-            margin: 5px;
-            background: #007bff;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s ease;
-        }
-        .link-container a:hover {
-            background: #0056b3;
-        }
-        .search-bar {
-            width: 80%;
-            padding: 10px;
-            margin: 20px 0;
-            border: 1px solid #007bff;
-            border-radius: 5px;
-        }
-        footer {
-            margin-top: 20px;
-            padding: 10px 0;
-            background: #007bff;
-            color: white;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SK Luasong - Unit Pengurusan Data</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+    /* ---------- Reset & Base ---------- */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body { background: #eef2f3; color: #333; line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
 
-    </style>
+    /* ---------- Header ---------- */
+    header { 
+        position: relative; 
+        background: linear-gradient(135deg,#004080,#0088cc); 
+        color: #fff; 
+        padding: 20px; 
+        text-align: center; 
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    header img.logo-left { position: absolute; top: 10px; left: 20px; height: 60px; }
+    header img.logo-right { position: absolute; top: 10px; right: 20px; height: 60px; }
+    header h1 { margin-top: 10px; font-size: 24px; font-weight: bold; }
+    header p { margin-top: 5px; font-size: 14px; }
+
+    /* ---------- Navigation ---------- */
+    nav { background: #005bb5; text-align: center; padding: 12px 0; }
+    nav a {
+        display: inline-block; margin: 5px; padding: 10px 18px; 
+        background: #0073e6; color: #fff; border-radius: 5px; font-weight: bold;
+        transition: 0.3s; cursor: pointer;
+    }
+    nav a:hover { background: #004080; transform: scale(1.05); }
+
+    /* ---------- Sections ---------- */
+    section {
+        display: none;
+        max-width: 900px;
+        margin: 20px auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        animation: fadeIn 0.5s ease-in-out;
+    }
+    section.active { display: block; }
+    .title { text-align: center; color: #005bb5; font-size: 22px; margin-bottom: 15px; }
+
+    /* ---------- Cards ---------- */
+    .card-container { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
+    .card { flex: 1 1 250px; background: #fdfdfd; padding: 15px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+    .card h4 { margin-bottom: 8px; color: #004080; }
+    .card p, .card li { font-size: 14px; margin-bottom: 5px; }
+
+    /* ---------- Borang Links ---------- */
+    .link-container a {
+        display: inline-block; margin: 8px; padding: 10px 15px; background: #007bff; color: #fff; border-radius: 5px;
+        font-weight: bold; transition: 0.3s;
+    }
+    .link-container a:hover { background: #0056b3; transform: scale(1.05); }
+
+    /* ---------- Footer ---------- */
+    footer { text-align: center; background: #007bff; color: #fff; padding: 12px 0; margin-top: 20px; }
+
+    /* ---------- Animations ---------- */
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+</style>
 </head>
 <body>
-    <header>
-        <img src="skluasong.jpg" alt="Logo SK Luasong Tawau" class="logo-right" width: 80%; max-width: 500px; display: block; margin: auto;">
-        <img src="Logo Sabah.png" alt="Logo Sabah" class="logo-left" width: 80%; max-width: 500px; display: block; margin: auto;">
-        <h1>Standard Kualiti Pendidikan Malaysia SKPM K@S</h1>
-        <p>Sekolah Kebangsaan Luasong, Peti Surat 60793, 91017 Tawau, Sabah</p>
-        <p id="date">
-            <p>"Laman web SKPM K@S dibangunkan untuk memudahkan analisis data dan pelaporan bagi keperluan pemantauan unit pentadbiran dalam merancang hala tuju dan peningkatan prestasi sekolah."</p>
-        </div>
-    </header>
-    <nav>
-        <a onclick="showSection('profil')">Profil Sekolah</a>
-        <a onclick="showSection('data')">Data & Analisis</a>
-        <a onclick="showSection('borang')">Borang & Muat Turun</a>
-        <a onclick="showSection('jpms')">Carta JPMS</a>
-        <a onclick="showSection('hubungi')">Hubungi Kami</a>
-        <a onclick="showSection('galeri')">Galeri</a>
-    </nav>
 
-    <section id="profil">
-        <h2 class="title">Profil Sekolah</h2>
-        <p><strong>Kronologi Penubuhan & Perkembangan Semasa</strong></p>
-        <p>Sekolah Kebangsaan Luasong terletak di kawasan pedalaman negeri Sabah dalam daerah Tawau, di dalam hutan simpan dan kawasan pembalakan Syarikat Yayasan Sabah. Jarak SK Luasong ke Bandar Tawau adalah 115 kilometer dengan perjalanan kira-kira 2 jam 30 minit, bergantung kepada keadaan jalan.</p>
-        <p>Sekolah ini dibina pada tahun 1964 oleh Syarikat The North Borneo Timbers Sdn. Bhd. dan dikenali sebagai Sekolah Rakyat Luasong. Ia bertujuan memberikan pendidikan kepada anak-anak pekerja syarikat tersebut. Guru Besar pertama adalah seorang berbangsa Filipina, dan guru-guru awalnya dibayar oleh syarikat tersebut.</p> <h2 class="title">📊 Data Enrolmen Terkini Sekolah Kebangsaan Luasong</h2>
-    <p>🌟 Profil Murid Mengikut Agama & Kelas</p>
-    <p>📅 Tarikh: 23 Oktober 2025</p>
+<header>
+    <img src="skluasong.jpg" alt="Logo SK Luasong" class="logo-left">
+    <img src="Logo Sabah.png" alt="Logo Sabah" class="logo-right">
+    <h1>SK Luasong - Unit Pengurusan Data</h1>
+    <p>Sekolah Kebangsaan Luasong, 91017 Tawau, Sabah</p>
+</header>
 
-    <hr>
+<nav>
+    <a onclick="showSection('profil')">Profil Sekolah</a>
+    <a onclick="showSection('borang')">Muat Turun Borang</a>
+    <a onclick="showSection('jpms')">Carta JPMS</a>
+    <a onclick="showSection('hubungi')">Hubungi</a>
+    <a onclick="showSection('galeri')">Galeri</a>
+</nav>
 
-        <h3>🏫 Pra Sekolah</h3>
-    <h4>Pra C</h4>
-    <p>👩‍🏫 Guru: Puan Saleha Binti Sumunir</p>
-    <ul>
-        <li>👦🕌 Lelaki Islam: 8</li>
-        <li>👦✝ Lelaki Bukan Islam: 3</li>
-        <li>👧🕌 Perempuan Islam: 5</li>
-        <li>👧✝ Perempuan Bukan Islam: 4</li>
-        <li><strong>Jumlah:</strong> 11 Lelaki, 9 Perempuan = 20 Murid</li>
-    </ul>
-
-    <h4>Pra B</h4>
-    <p>👩‍🏫 Guru: Cik Nurzahiah binti Mabirin@ Ramlee</p>
-    <ul>
-        <li>👦🕌 Lelaki Islam: 9</li>
-        <li>👦✝ Lelaki Bukan Islam: 2</li>
-        <li>👧🕌 Perempuan Islam: 8</li>
-        <li>👧✝ Perempuan Bukan Islam: 6</li>
-        <li><strong>Jumlah:</strong> 11 Lelaki, 14 Perempuan = 25 Murid</li>
-    </ul>
-
-    <hr>
-
-    <h3>🏫 Tahun 1 hingga Tahun 6</h3>
+<section id="profil" class="active">
+    <h2 class="title">Profil Sekolah</h2>
+    <p>Sekolah Kebangsaan Luasong terletak di kawasan pedalaman Tawau, Sabah. Ditubuhkan pada tahun 1964 oleh Syarikat The North Borneo Timbers Sdn. Bhd. untuk pendidikan anak-anak pekerja.</p>
     
-    <h4>Tahun 1 Amanah</h4>
-    <p>👩‍🏫 Guru: Puan Linda Arellano</p>
-    <ul>
-        <li>👦🕌 Lelaki Islam: 7</li>
-        <li>👦✝ Lelaki Bukan Islam: 4</li>
-        <li>👧🕌 Perempuan Islam: 6</li>
-        <li>👧✝ Perempuan Bukan Islam: 3</li>
-        <li><strong>Jumlah:</strong> 11 Lelaki, 9 Perempuan = 20 Murid</li>
-    </ul>
-
-    <h4>Tahun 2 Cekap</h4>
-    <p>👩‍🏫 Guru: Sherly Lazurus</p>
-    <ul>
-        <li>👦🕌 Lelaki Islam: 7</li>
-        <li>👦✝ Lelaki Bukan Islam: 4</li>
-        <li>👧🕌 Perempuan Islam: 7</li>
-        <li>👧✝ Perempuan Bukan Islam: 5</li>
-        <li><strong>Jumlah:</strong> 11 Lelaki, 12 Perempuan = 23 Murid</li>
-    </ul>
-
-    <h4>Tahun 3 Cerdik</h4>
-    <p>👨‍🏫 Guru: Mohd Fikri bin Tamjehi</p>
-    <ul>
-        <li>👦🕌 Lelaki Islam: 8</li>
-        <li>👦✝ Lelaki Bukan Islam: 3</li>
-        <li>👧🕌 Perempuan Islam: 9</li>
-        <li>👧✝ Perempuan Bukan Islam: 7</li>
-        <li><strong>Jumlah:</strong> 11 Lelaki, 16 Perempuan = 27 Murid</li>
-    </ul>
-
-    <h4>Tahun 4 Adil</h4>
-    <p>👩‍🏫 Guru: Puan Bibie Novyna Mohd Towy Paton</p>
-    <ul>
-        <li>👦🕌 Lelaki Islam: 7</li>
-        <li>👦✝ Lelaki Bukan Islam: 3</li>
-        <li>👧🕌 Perempuan Islam: 8</li>
-        <li>👧✝ Perempuan Bukan Islam: 2</li>
-        <li><strong>Jumlah:</strong> 10 Lelaki, 10 Perempuan = 20 Murid</li>
-    </ul>
-
-    <h4>Tahun 5 Azam</h4>
-    <p>👩‍🏫 Guru: Cik Sangeetar Kaur Ak Jasbeer Singh</p>
-    <ul>
-        <li>👦🕌 Lelaki Islam: 8</li>
-        <li>👦✝ Lelaki Bukan Islam: 4</li>
-        <li>👧🕌 Perempuan Islam: 11</li>
-        <li>👧✝ Perempuan Bukan Islam: 4</li>
-        <li><strong>Jumlah:</strong> 12 Lelaki, 15 Perempuan = 27 Murid</li>
-    </ul>
-
-    <h4>Tahun 6 Arif</h4>
-    <p>👩‍🏫 Guru: Nur Rafika Mohammad</p>
-    <ul>
-        <li>👦🕌 Lelaki Islam: 12</li>
-        <li>👦✝ Lelaki Bukan Islam: 1</li>
-        <li>👧🕌 Perempuan Islam: 11</li>
-        <li>👧✝ Perempuan Bukan Islam: 5</li>
-        <li><strong>Jumlah:</strong> 13 Lelaki, 16 Perempuan = 29 Murid</li>
-    </ul>
-    </section>
-
-<section id="data">
-    <h2 class="title">Data & Analisis SKPM K@S Sesi 2023/2024</h2>
-<p><strong>TERSEDIA ANALISIS PENUH PERBANDINGAN. SILA KLIK <a href="https://momon-ux.github.io/SOOKA/" target="_blank"><i class="fas fa-book"></i> ANALISIS PRESTASI SEKOLAH</a></strong></p>
-<img src="KEKUATAN KAMI.png" alt="Graf Kekuatan Kami" style="width: 50%; max-width: 400px; display: block; margin: auto;">
-    <p>SK Luasong mencatat kekuatan tertinggi dalam kualiti pengajaran dan pembelajaran (17), diikuti oleh prasarana akademik (12) serta prasarana sukan dan kokurikulum (10). Prasarana hal ehwal murid (10) dan persekitaran digital (8.5) berada pada tahap sederhana, manakala sokongan ibu bapa dan komuniti (7.2) serta tenaga pengajar (3.95) menunjukkan keperluan untuk penambahbaikan. Asrama (0) tidak diambil kira kerana SK Luasong tidak mempunyai kemudahan tersebut. Fokus utama adalah meningkatkan kecekapan tenaga pengajar, memperkukuh sokongan komuniti, dan memperluaskan penggunaan teknologi dalam pendidikan.</p>
-    <ul>
-<img src="STANDARD 1-5.png" alt="Graf Standard 1-5" style="width: 50%; max-width: 400px; display: block; margin: auto;">
-<p>Analisis Rumusan Standard 1-5 Tahun 2024<p>
-<li>Standard 4 (Pembelajaran dan Pemudahcaraan - PdPc) mencatat skor tertinggi (93.4), diikuti oleh Standard 2 (Pengurusan Organisasi) dengan 92.46. Standard 3.1 (Pengurusan Kurikulum) dan Standard 3.3 (Pengurusan Hal Ehwal Murid) berada pada tahap baik dengan skor 87.91 dan 86.94. Standard 1 (Kepimpinan) serta Standard 3.2 (Pengurusan Kokurikulum) mencatat skor sederhana masing-masing 82.72 dan 82.09. Walau bagaimanapun, Standard 5 (Kemenjadian Murid, Pencapaian Murid dan Sekolah) mencatat skor terendah (53.01), menunjukkan keperluan penambahbaikan dalam aspek pencapaian murid. Fokus utama adalah meningkatkan impak PdPc terhadap kemenjadian murid serta memperkukuh strategi untuk memastikan kesinambungan pencapaian yang lebih baik.</li>
-    </ul>
-    <ul>
-<img src="STANDARD 5 KEMENJADIAN.png" alt="Graf Standard 5 Kemenjadian" style="width: 50%; max-width: 400px; display: block; margin: auto;">
-<p>Kemenjadian murid dalam akademik untuk Tahun 2024 (17.17), kokurikulum (16.75), dan sahsiah (16.09) berada pada tahap baik, mencerminkan prestasi positif dalam pembentukan murid yang seimbang. Namun, bilangan pencapaian guru (1.5) dan pencapaian sekolah (1.5) dalam aktiviti/pertandingan yang diiktiraf KPM adalah sangat rendah, menunjukkan keperluan peningkatan dalam penyertaan serta kejayaan di peringkat yang lebih tinggi. Fokus utama adalah memperkukuh penyertaan guru dan sekolah dalam pertandingan serta program yang berimpak tinggi bagi meningkatkan pengiktirafan di peringkat KPM.<p>
-    </ul>
-
-    <ul>
-<img src="STANDARD 1 KEPIMPINAN.png" alt="Graf Standard 1 Kepimpinan" style="width: 50%; max-width: 400px; display: block; margin: auto;">
-<p>Kepimpinan PGB sebagai pembimbing dalam Tahun 2024 (83.33) mencatat skor tertinggi, diikuti rapat oleh peranan sebagai peneraju (83.27). Peranan sebagai pendorong (81.25) sedikit lebih rendah, tetapi masih berada dalam kategori baik. Data ini menunjukkan bahawa kepimpinan sekolah berada pada tahap kukuh dalam aspek bimbingan dan hala tuju, namun terdapat ruang untuk memperkukuh peranan sebagai pendorong dalam meningkatkan motivasi serta pembangunan profesional warga sekolah.<p>
-    </ul>
-
-    <ul>
-<img src="STANDARD 2 PENGURUSAN.png" alt="Graf Standard 2 Pengurusan" style="width: 50%; max-width: 500px; display: block; margin: auto;">
-<p>Pengurusan organisasi SK Luasong pada tahun 2024 menunjukkan prestasi cemerlang dalam pengurusan aset (100) dan pengurusan sumber manusia (94.38). Pengurusan kewangan (93.75) dan pengurusan perpaduan (95) juga berada pada tahap tinggi. Iklim sekolah (85.42) serta pengurusan sumber pendidikan (87.5) memerlukan penambahbaikan, manakala permufakatan strategik (92.46) menunjukkan hubungan baik dengan pihak berkepentingan. Secara keseluruhan, pengurusan organisasi adalah kukuh, dengan fokus utama untuk mempertingkatkan suasana sekolah dan akses kepada sumber pendidikan yang lebih baik. Secara keseluruhan, prestasi pengurusan berada pada tahap yang amat membanggakan — hanya perlu sedikit pelarasan untuk memastikan semua elemen berada pada tahap cemerlang sepenuhnya! 🌟</p>
-
-    <ul>
-<img src="STANDARD 3.1 KURIKULUM.png" alt="Graf Standard 3.1 Kurikulum" style="width: 50%; max-width: 500px; display: block; margin: auto;">
-<p>Pengurusan kurikulum secara keseluruhan berada pada tahap baik (87.91%), dengan pengurusan mata pelajaran mencatatkan pencapaian tertinggi (93.75%), menunjukkan keberkesanan dalam penyelarasan dan pelaksanaan kurikulum. Pengurusan masa instruksional (89.01%) juga berada pada tahap kukuh, menandakan pemanfaatan masa pengajaran yang baik. Namun, ketetapan pelaksanaan kurikulum (85%) dan pengurusan penilaian murid (81.25%) menunjukkan ruang untuk penambahbaikan, khususnya dalam aspek pemantauan berterusan dan penilaian diagnostik bagi meningkatkan keberkesanan pembelajaran murid.<p>
-    </ul>
-
-    <ul>
-<img src="STANDARD 3.2 KOKURIKULUM.png" alt="Graf Standard 3.2 Pengurusan Kokurikulum" style="width: 50%; max-width: 500px; display: block; margin: auto;">
-<p>Berdasarkan analisis Standard 3.2: Pengurusan Kokurikulum tahun 2024, skor purata keseluruhan adalah 82.09, menunjukkan tahap pencapaian yang baik. Standard 3.2.4 (Pengurusan Sukan/Permainan) mencatatkan skor tertinggi (88), diikuti oleh Standard 3.2.3 dan 3.2.2 dengan 87. Standard 3.2.6 pula memperoleh 84.37, manakala Standard 3.2.1, 3.2.5, dan 3.2.7 masing-masing mendapat 75, menandakan keperluan penambahbaikan dalam aspek perancangan dan pentaksiran kokurikulum. Secara keseluruhan, pengurusan kokurikulum berada pada tahap yang memuaskan dengan ruang untuk diperkasakan, terutama dalam aspek pentaksiran dan program kecemerlangan.</p>
-    </ul>
-
-    <ul>
-<img src="STANDARD 3.3 PENGURUSAN HEM.png" alt="Graf Standard 3.3 Pengurusan HEM" style="width: 50%; max-width: 500px; display: block; margin: auto;">
-<p>Berdasarkan analisis Standard 3.3: Pengurusan Hal Ehwal Murid (HEM), skor purata keseluruhan ialah 86.94, menunjukkan tahap pengurusan yang sangat baik. Hampir semua substandard mencatatkan skor 87.5, termasuk Pengurusan Keselamatan Murid, Kesihatan Murid, Bantuan Pelajaran, Perkhidmatan Bimbingan dan Kaunseling, serta Pentadbiran Psikometrik, mencerminkan keberkesanan dalam pelaksanaan aspek HEM. Namun, Standard 3.3.2 (Ketetapan Pelaksanaan HEM) mencatatkan skor terendah (85), menunjukkan keperluan penambahbaikan dalam aspek perancangan dan pelaksanaan ketetapan HEM. Secara keseluruhannya, pengurusan HEM berada pada tahap cemerlang dengan hanya sedikit ruang untuk diperkasakan dalam ketetapan pelaksanaan.</p>
-    </ul>
-
-    <ul>
-<img src="STANDARD 4 PDPC.png" alt="Graf Standard 4 PDPC" style="width: 50%; max-width: 500px; display: block; margin: auto;">
-       <p>Pelaksanaan PdPc di SK Luasong berada pada tahap cemerlang (93.4%), dengan guru memainkan peranan yang sangat efektif dalam aspek perancangan (96.56%), pengawalan (95.58%), pembimbingan (94.41%), pendorongan (95.24%), dan penilaian (95.58%). Namun, penglibatan murid sebagai pembelajar aktif (86.55%) masih lebih rendah berbanding peranan guru. Ini menunjukkan keperluan untuk memperkukuh kaedah pengajaran yang lebih interaktif dan berpusatkan murid bagi meningkatkan keterlibatan aktif dalam proses pembelajaran.<p>
-    </ul>
+    <h3>📊 Enrolmen Murid 2025</h3>
+    <div class="card-container">
+        <div class="card">
+            <h4>Pra C</h4>
+            <p>Guru: Puan Saleha Binti Sumunir</p>
+            <ul>
+                <li>Lelaki Islam: 8</li>
+                <li>Lelaki Bukan Islam: 3</li>
+                <li>Perempuan Islam: 5</li>
+                <li>Perempuan Bukan Islam: 4</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h4>Pra B</h4>
+            <p>Guru: Cik Nurzahiah binti Mabirin</p>
+            <ul>
+                <li>Lelaki Islam: 9</li>
+                <li>Lelaki Bukan Islam: 2</li>
+                <li>Perempuan Islam: 8</li>
+                <li>Perempuan Bukan Islam: 6</li>
+            </ul>
+        </div>
+    </div>
 </section>
 
 <section id="borang">
-    <h2 class="title">Borang & Muat Turun</h2>
-
-    <p>
-        <a href="https://drive.google.com/drive/folders/1U4cFbY0qZKlagFbcZhQIaGvp11Y0ZTXs?usp=drive_link" target="_blank">
-            📂 Borang
-        </a>
-    </p>
-    <p>
-        <a href="https://drive.google.com/drive/folders/1GFli7mHfSg1VQi2mWXrsrxvD77_HePI5?usp=drive_link" target="_blank">
-            📤 Pencapaian
-        </a>
-    </p>
-    <p>
-        <a href="https://momon-ux.github.io/std4/" target="_blank">
-            📘 STD4: Koleksi PdPC Sesi 2023–2030
-        </a>
-    </p>
+    <h2 class="title">Muat Turun Borang</h2>
+    <div class="link-container">
+        <a href="https://drive.google.com/drive/folders/1U4cFbY0qZKlagFbcZhQIaGvp11Y0ZTXs?usp=drive_link" target="_blank"><i class="fas fa-folder"></i> Borang</a>
+        <a href="https://drive.google.com/drive/folders/1GFli7mHfSg1VQi2mWXrsrxvD77_HePI5?usp=drive_link" target="_blank"><i class="fas fa-upload"></i> Pencapaian</a>
+        <a href="https://momon-ux.github.io/std4/" target="_blank"><i class="fas fa-book"></i> Koleksi PdPC 2023–2030</a>
+    </div>
 </section>
-
-
 
 <section id="jpms">
-  <h2 class="title">Carta Organisasi Jawatankuasa Pengurusan Maklumat Sekolah</h2>
+    <h2 class="title">Carta JPMS</h2>
+    <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden;">
+        <iframe src="https://drive.google.com/file/d/16vDGyzoATuYWOCAx94QIklMSMc23iwZ0/preview" 
+            style="position:absolute; top:0; left:0; width:100%; height:100%;" allow="autoplay"></iframe>
+    </div>
+</section>
 
-  <!-- Video dari Google Drive -->
-  <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden;">
-    <iframe 
-      src="https://drive.google.com/file/d/16vDGyzoATuYWOCAx94QIklMSMc23iwZ0/preview" 
-      style="position:absolute; top:0; left:0; width:100%; height:100%;" 
-      allow="autoplay">
-    </iframe>
-  </div>
-            <li><strong>GURU BESAR:</strong> EN MOHAMAD HEZREY BIN HAMID (PENGERUSI)</li>
-            <li><strong>GPK PENTADBIRAN:</strong> EN JAFFAR SAHADAN (TIMB. PENGERUSI)</li>
-            <li><strong>GPK HEM:</strong> EN IRMUS ISDUP (NAIB PENGERUSI)</li>
-            <li><strong>GPK KOKUM:</strong> EN JUANIS ODONG (NAIB PENGERUSI)</li>
-            <li><strong>SETIAUSAHA:</strong> EN MOHAMMAD FIKREY BIN ABDUL GAPAR</li>
-            <li><strong>APDM:</strong> EN. MOHAMMAD FIKREY BIN ABDUL GAPAR</li>
-            <li><strong>PENYELARAS JADUAL WAKTU:</strong> PN. IZZATI HAZIRAH BINTI MOHD</li>
-            <li><strong>BIMBINGAN DAN KAUNSELING:</strong> EN RIDUAN BIN LAHERO</li>
-            <li><strong>PENYELARAS ICT/BESTARI:</strong> EN. MOHAMMAD FIKREY BIN ABDUL GAPAR</li>
-            <li><strong>INVENTORI/ASET:</strong> EN RIDUAN LAHERO</li>
-            <li><strong>PENYELARAS PEPERIKSAAN:</strong> CIK SANGGETAR KAUR AP JASBEER SINGH</li>
-            <li><strong>KSSR/MBMMBI:</strong> CIK SANGGEETAR KAUR AP JASBEER SINGH</li>
-            <li><strong>BIASISWA/KWAMP:</strong> PN. IZZATI HAZIRAH BINTI MOHD</li>
-            <li><strong>PEMBANTU TADBIR:</strong> PN HASNI SINGGEH, PN JURIMAH JUHARI</li>
-            <li><strong>PENYELARAS PRASEKOLAH:</strong> CIK NURZAHIAH MABIRIN</li>
-            <li><strong>SSDM:</strong> EN. AHMAT LAHAWING</li>
-            <li><strong>PBD:</strong> CIK SANGGEETAR KAUR AP JASBEER SINGH</li>
-            <li><strong>SEMUA GURU MATA PELAJARAN, SETIAUSAHA PANITIA, & GURU KELAS</strong></li>
-        </ul>
-    </section>
 <section id="hubungi">
     <h2 class="title">Hubungi Kami</h2>
-    <p>Boleh terus email kami di <a href="mailto:xca3029sc@gmail.com">xca3029sc@gmail.com</a></p>
-    <p>Atau hantar surat ke alamat:</p>
-    <p><strong>Sekolah Kebangsaan Luasong</strong><br>
-    Peti Surat 60793<br>
-    91017, Tawau, Sabah</p>
-    <p><em>Tiada nombor telefon sekolah dan faks.</em></p>
+    <p>Email: <a href="mailto:xca3029sc@gmail.com">xca3029sc@gmail.com</a></p>
+    <p>Alamat: Sekolah Kebangsaan Luasong, Peti Surat 60793, 91017 Tawau, Sabah</p>
 </section>
-<section id="galeri" style="text-align: center;">
 
-    <figure>
-        <img src="WhatsApp Image 2025-03-13 at 09.52.00_4f6eba38.jpg" alt="Perbincangan antara tiga individu" style="width: 50%; max-width: 600px; display: block; margin: auto;">
-        <figcaption><strong>Perbincangan PLC:</strong> Pengurusan Data SK@S untuk Pemantapan Sistem Sekolah 📊📚</figcaption>
-    </figure>
-
-    <figure>
-        <img src="WhatsApp Image 2025-03-11 at 08.22.26_4a391070.jpg" alt="Gambar PLC" style="width: 50%; max-width: 600px; display: block; margin: auto;">
-        <figcaption><strong>Sesi Latihan Pengurusan Data SK@S 📊💻</strong> – Komitmen dalam meningkatkan kecekapan digital dan pengurusan maklumat sekolah. #PLC #TransformasiDigital #SKLuasangTawau</figcaption>
-    </figure>
-
+<section id="galeri">
+    <h2 class="title">Galeri</h2>
+    <img src="WhatsApp Image 2025-03-13 at 09.52.00_4f6eba38.jpg" style="width:50%; margin: 10px auto; display:block;">
+    <img src="WhatsApp Image 2025-03-11 at 08.22.26_4a391070.jpg" style="width:50%; margin: 10px auto; display:block;">
 </section>
-    <footer>
-        <p>Dibangunkan oleh Mohammad Fikrey Bin Abdul Gapar</p>
-        <p>Jumlah Pelawat: <span id="counter">0</span></p>
-    </footer>
 
-    <script>
-        document.getElementById("date").innerText = new Date().toLocaleDateString("ms-MY");
-        let count = localStorage.getItem("visitorCount") || 0;
-        count++;
-        localStorage.setItem("visitorCount", count);
-        document.getElementById("counter").innerText = count;
-        
-        function showSection(sectionId) {
-            let sections = document.querySelectorAll("section");
-            sections.forEach(section => {
-                section.style.display = "none";
-            });
-            document.getElementById(sectionId).style.display = "block";
-        }
-        
-        showSection('profil');
-    </script>
+<footer>
+    <p>Dibangunkan oleh Mohammad Fikrey Bin Abdul Gapar</p>
+    <p>Jumlah Pelawat: <span id="counter">0</span></p>
+</footer>
+
+<script>
+    // Tanggal & Visitor Counter
+    let count = localStorage.getItem("visitorCount") || 0;
+    count++; localStorage.setItem("visitorCount", count);
+    document.getElementById("counter").innerText = count;
+
+    // Section Toggle
+    function showSection(id){
+        document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
+        document.getElementById(id).classList.add("active");
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
