@@ -71,8 +71,7 @@
 </head>
 <body>
     <header>
-        <img src="skluasong.jpg" alt="Logo SK Luasong Tawau" class="logo-right" width: 80%; max-width: 500px; display: block; margin: auto;">
-        <img src="Logo Sabah.png" alt="Logo Sabah" class="logo-left" width: 80%; max-width: 500px; display: block; margin: auto;">
+        <img src="skluasong.jpg" alt="Logo SK Luasong Tawau" class="logo-left" width: 80%; max-width: 500px; display: block; margin: auto;">
         <h1>Standard Kualiti Pendidikan Malaysia SKPM K@S</h1>
         <p>Sekolah Kebangsaan Luasong, Peti Surat 60793, 91017 Tawau, Sabah</p>
         <p id="date">
@@ -80,7 +79,7 @@
         </div>
     </header>
     <nav>
-        <a onclick="showSection('profil')">Profil Sekolah</a>
+        <a onclick="showSection('profil')">TAKWIM SKPM K@S</a>
         <a onclick="showSection('data')">Data & Analisis</a>
         <a onclick="showSection('borang')">Borang & Muat Turun</a>
         <a onclick="showSection('jpms')">Carta JPMS</a>
@@ -89,99 +88,248 @@
     </nav>
 
     <section id="profil">
-        <h2 class="title">Profil Sekolah</h2>
-        <p><strong>Kronologi Penubuhan & Perkembangan Semasa</strong></p>
-        <p>Sekolah Kebangsaan Luasong terletak di kawasan pedalaman negeri Sabah dalam daerah Tawau, di dalam hutan simpan dan kawasan pembalakan Syarikat Yayasan Sabah. Jarak SK Luasong ke Bandar Tawau adalah 115 kilometer dengan perjalanan kira-kira 2 jam 30 minit, bergantung kepada keadaan jalan.</p>
-        <p>Sekolah ini dibina pada tahun 1964 oleh Syarikat The North Borneo Timbers Sdn. Bhd. dan dikenali sebagai Sekolah Rakyat Luasong. Ia bertujuan memberikan pendidikan kepada anak-anak pekerja syarikat tersebut. Guru Besar pertama adalah seorang berbangsa Filipina, dan guru-guru awalnya dibayar oleh syarikat tersebut.</p> <h2 class="title">📊 Data Enrolmen Terkini Sekolah Kebangsaan Luasong</h2>
-    <p>🌟 Profil Murid Mengikut Agama & Kelas</p>
-    <p>📅 Tarikh: 23 Oktober 2025</p>
+  <title>Dashboard SKPM 2025 - SK Luasong</title>
+  <style>
+    :root {
+      --merah: #b30000;
+      --putih: #ffffff;
+      --hitam: #1a1a1a;
+      --kelabu: #f4f4f4;
+    }
 
-    <hr>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: var(--kelabu);
+      margin: 0;
+      padding: 0;
+      color: var(--hitam);
+    }
 
-        <h3>🏫 Pra Sekolah</h3>
-    <h4>Pra C</h4>
-    <p>👩‍🏫 Guru: Puan Saleha Binti Sumunir</p>
-    <ul>
-        <li>👦🕌 Lelaki Islam: 8</li>
-        <li>👦✝ Lelaki Bukan Islam: 3</li>
-        <li>👧🕌 Perempuan Islam: 5</li>
-        <li>👧✝ Perempuan Bukan Islam: 4</li>
-        <li><strong>Jumlah:</strong> 11 Lelaki, 9 Perempuan = 20 Murid</li>
-    </ul>
+    header img {
+      position: absolute;
+      top: 15px;
+      left: 30px;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--putih);
+      background: var(--putih);
+    }
 
-    <h4>Pra B</h4>
-    <p>👩‍🏫 Guru: Cik Nurzahiah binti Mabirin@ Ramlee</p>
-    <ul>
-        <li>👦🕌 Lelaki Islam: 9</li>
-        <li>👦✝ Lelaki Bukan Islam: 2</li>
-        <li>👧🕌 Perempuan Islam: 8</li>
-        <li>👧✝ Perempuan Bukan Islam: 6</li>
-        <li><strong>Jumlah:</strong> 11 Lelaki, 14 Perempuan = 25 Murid</li>
-    </ul>
+    header h1 {
+      margin: 0;
+      font-size: 1.5em;
+      line-height: 1.4;
+    }
 
-    <hr>
+    header p {
+      margin: 5px 0 0 0;
+      font-size: 1em;
+      opacity: 0.9;
+    }
 
-    <h3>🏫 Tahun 1 hingga Tahun 6</h3>
-    
-    <h4>Tahun 1 Amanah</h4>
-    <p>👩‍🏫 Guru: Puan Linda Arellano</p>
-    <ul>
-        <li>👦🕌 Lelaki Islam: 7</li>
-        <li>👦✝ Lelaki Bukan Islam: 4</li>
-        <li>👧🕌 Perempuan Islam: 6</li>
-        <li>👧✝ Perempuan Bukan Islam: 3</li>
-        <li><strong>Jumlah:</strong> 11 Lelaki, 9 Perempuan = 20 Murid</li>
-    </ul>
+    .container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 20px;
+      background: var(--putih);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      border-radius: 12px;
+    }
 
-    <h4>Tahun 2 Cekap</h4>
-    <p>👩‍🏫 Guru: Sherly Lazurus</p>
-    <ul>
-        <li>👦🕌 Lelaki Islam: 7</li>
-        <li>👦✝ Lelaki Bukan Islam: 4</li>
-        <li>👧🕌 Perempuan Islam: 7</li>
-        <li>👧✝ Perempuan Bukan Islam: 5</li>
-        <li><strong>Jumlah:</strong> 11 Lelaki, 12 Perempuan = 23 Murid</li>
-    </ul>
+    .section {
+      margin-bottom: 40px;
+    }
 
-    <h4>Tahun 3 Cerdik</h4>
-    <p>👨‍🏫 Guru: Mohd Fikri bin Tamjehi</p>
-    <ul>
-        <li>👦🕌 Lelaki Islam: 8</li>
-        <li>👦✝ Lelaki Bukan Islam: 3</li>
-        <li>👧🕌 Perempuan Islam: 9</li>
-        <li>👧✝ Perempuan Bukan Islam: 7</li>
-        <li><strong>Jumlah:</strong> 11 Lelaki, 16 Perempuan = 27 Murid</li>
-    </ul>
+    .section h2 {
+      background: var(--merah);
+      color: var(--putih);
+      padding: 10px 15px;
+      border-radius: 10px 10px 0 0;
+      font-size: 1.2em;
+    }
 
-    <h4>Tahun 4 Adil</h4>
-    <p>👩‍🏫 Guru: Puan Bibie Novyna Mohd Towy Paton</p>
-    <ul>
-        <li>👦🕌 Lelaki Islam: 7</li>
-        <li>👦✝ Lelaki Bukan Islam: 3</li>
-        <li>👧🕌 Perempuan Islam: 8</li>
-        <li>👧✝ Perempuan Bukan Islam: 2</li>
-        <li><strong>Jumlah:</strong> 10 Lelaki, 10 Perempuan = 20 Murid</li>
-    </ul>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
 
-    <h4>Tahun 5 Azam</h4>
-    <p>👩‍🏫 Guru: Cik Sangeetar Kaur Ak Jasbeer Singh</p>
-    <ul>
-        <li>👦🕌 Lelaki Islam: 8</li>
-        <li>👦✝ Lelaki Bukan Islam: 4</li>
-        <li>👧🕌 Perempuan Islam: 11</li>
-        <li>👧✝ Perempuan Bukan Islam: 4</li>
-        <li><strong>Jumlah:</strong> 12 Lelaki, 15 Perempuan = 27 Murid</li>
-    </ul>
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px 12px;
+      text-align: center;
+    }
 
-    <h4>Tahun 6 Arif</h4>
-    <p>👩‍🏫 Guru: Nur Rafika Mohammad</p>
-    <ul>
-        <li>👦🕌 Lelaki Islam: 12</li>
-        <li>👦✝ Lelaki Bukan Islam: 1</li>
-        <li>👧🕌 Perempuan Islam: 11</li>
-        <li>👧✝ Perempuan Bukan Islam: 5</li>
-        <li><strong>Jumlah:</strong> 13 Lelaki, 16 Perempuan = 29 Murid</li>
-    </ul>
+    th {
+      background: var(--hitam);
+      color: var(--putih);
+    }
+
+    a {
+      text-decoration: none;
+      background: var(--merah);
+      color: var(--putih);
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: 0.3s;
+      font-size: 0.9em;
+    }
+
+    a:hover {
+      background: #ff4d4d;
+    }
+
+    footer {
+      background: var(--hitam);
+      color: var(--putih);
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9em;
+      letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 768px) {
+      header img {
+        position: static;
+        display: block;
+        margin: 0 auto 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>PENGISIAN STANDARD KUALITI PENDIDIKAN MALAYSIA (SKPM)<br>
+  KUALITI@ SEKOLAH (SK@S) BAGI TAHUN 2025</h1>
+  <p>Sekolah Kebangsaan Luasong, Tawau</p>
+</header>
+
+<div class="container">
+
+  <!-- KEKUATAN KAMI -->
+  <div class="section">
+    <h2>💪 KEKUATAN KAMI</h2>
+    <table>
+      <tr>
+        <th>Bil</th>
+        <th>Perkara</th>
+        <th>Tindakan</th>
+        <th>Tarikh Mula</th>
+        <th>Tarikh Tamat</th>
+        <th>Pautan</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Membuat pengisian maklumat Kekuatan Kami</td>
+        <td>Sekolah</td>
+        <td>27 Okt 2025</td>
+        <td>28 Nov 2025</td>
+        <td><a href="https://docs.google.com/spreadsheets/d/1d-ZxZSg8MgxwoZrDiN6CTOiVIYLci1d_/edit?usp=drive_link&ouid=110125848295509227961&rtpof=true&sd=true">Semak Data</a></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Pengesahan maklumat Kekuatan Kami</td>
+        <td>PPD</td>
+        <td>12 Nov 2025</td>
+        <td>5 Dis 2025</td>
+        <td>-</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- PENGURUSAN KAMI -->
+  <div class="section">
+    <h2>🏫 PENGURUSAN KAMI</h2>
+    <table>
+      <tr>
+        <th>Bil</th>
+        <th>Perkara</th>
+        <th>Tindakan</th>
+        <th>Tarikh Mula</th>
+        <th>Tarikh Tamat</th>
+        <th>Pautan</th>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Mengedar borang dan membuat pengisian data skor Std 4 Pencerap Kendiri</td>
+        <td>GD</td>
+        <td>15 Okt 2025</td>
+        <td>12 Nov 2025</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Lengkapkan maklumat Pasukan Pelaksana Standard (PPS)</td>
+        <td>JK SKPM</td>
+        <td>15 Okt 2025</td>
+        <td>15 Dis 2025</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Membuat Pengisian Skor Pengurusan Kami (Sub Modul 3.1 & 3.2)</td>
+        <td>GD</td>
+        <td>17 Okt 2025</td>
+        <td>18 Dis 2025</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Mengedar Borang Edaran Offline Std4 Pencerapan 1 & 2</td>
+        <td>JK SKPM</td>
+        <td>11 Nov 2025</td>
+        <td>15 Dis 2025</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>Membuat Pengisian Data Evidens Sub Modul Pengurusan Kami (Std 1-3)</td>
+        <td>GD</td>
+        <td>5 Nov 2025</td>
+        <td>15 Dis 2025</td>
+        <td>-</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- PENCAPAIAN KAMI -->
+  <div class="section">
+    <h2>🏅 PENCAPAIAN KAMI</h2>
+    <table>
+      <tr>
+        <th>Bil</th>
+        <th>Perkara</th>
+        <th>Tindakan</th>
+        <th>Tarikh Mula</th>
+        <th>Tarikh Tamat</th>
+        <th>Pautan</th>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>Membuat pengisian Pencapaian Guru dan Pencapaian Sekolah</td>
+        <td>JK SKPM</td>
+        <td>27 Okt 2025</td>
+        <td>31 Dis 2026</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>Penetapan Taraf Sekolah dan Permohonan Pengesahan Taraf Sekolah Rendah (SR)</td>
+        <td>GB</td>
+        <td>18 Okt 2025</td>
+        <td>31 Jan 2026</td>
+        <td>-</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<footer>
+  Dibangunkan oleh <b>Mohammad Fikrey Bin Abdul Gapar</b> © 2025 | SK Luasong Tawau
+</footer>
+
     </section>
 
 <section id="data">
@@ -305,7 +453,7 @@
 
 </section>
     <footer>
-        <p>Dibangunkan oleh Mohammad Fikrey Bin Abdul Gapar</p>
+   
         <p>Jumlah Pelawat: <span id="counter">0</span></p>
     </footer>
 
@@ -328,7 +476,6 @@
     </script>
 </body>
 </html>
-
 
 
 
